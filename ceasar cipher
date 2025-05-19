@@ -1,0 +1,22 @@
+def caesar_cipher():
+    # Get user input
+    text = input("Enter the word to encrypt: ")
+    shift = int(input("Enter the shift value (e.g. 3): "))
+
+    result = ""
+
+    for char in text:
+        if char.isalpha():
+            # Determine if the character is uppercase or lowercase
+            base = ord('A') if char.isupper() else ord('a')
+            # Apply the Caesar cipher shift
+            shifted = (ord(char) - base + shift) % 26 + base
+            result += chr(shifted)
+        else:
+            # Keep non-alphabetic characters unchanged
+            result += char
+
+    print(f"Encrypted word: {result}")
+
+# Run the Caesar cipher
+caesar_cipher()
