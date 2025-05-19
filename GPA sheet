@@ -1,0 +1,24 @@
+grade_points = {
+    'A': 5,
+    'B': 4,
+    'C': 3,
+    'D': 2,  
+    'F': 0
+}
+
+def calculate_gpa():
+    total_points = 0
+    num_courses = 6
+
+    print("Enter grades for 6 courses (A, B, C, D, F):")
+    for i in range(1, num_courses + 1):
+        while True:
+            grade = input(f"Course {i} grade: ").strip().upper()
+            if grade in grade_points:
+                total_points += grade_points[grade]
+                break
+            else:
+                print("Invalid grade. Please enter A, B, C, D, or F.")
+
+    gpa = total_points / num_courses
+    print("Your GPA for 6 courses is:" gpa)
